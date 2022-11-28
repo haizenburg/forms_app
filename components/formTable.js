@@ -6,16 +6,7 @@ export default function Table() {
       <thead>
         <tr className="bg-gray-800">
           <th className="px-16 py-2">
-            <span className="text-gray-200">Name</span>
-          </th>
-          <th className="px-16 py-2">
-            <span className="text-gray-200">Email</span>
-          </th>
-          <th className="px-16 py-2">
-            <span className="text-gray-200">Salary</span>
-          </th>
-          <th className="px-16 py-2">
-            <span className="text-gray-200">Birthday</span>
+            <span className="text-gray-200">Form name</span>
           </th>
           <th className="px-16 py-2">
             <span className="text-gray-200">Status</span>
@@ -33,15 +24,13 @@ export default function Table() {
               Daily Tuition
             </span>
           </td>
-          <td className="px-16 py-2">
-            <span>dailytuition@gmail.com</span>
-          </td>
-          <td className="px-16 py-2">
+
+          {/* <td className="px-16 py-2">
             <span>$25000</span>
           </td>
           <td className="px-16 py-2">
             <span>10-05-2022</span>
-          </td>
+          </td> */}
           <td className="px-16 py-2">
             <button className="cursor">
               <span className="bg-green-500 text-white px-5 py-1 rounded-full">
