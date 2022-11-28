@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Table from "../../components/formTable";
+import Form from "../../components/form";
 function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [formContent, setFormContent] = useState([]);
@@ -9,7 +10,7 @@ function index() {
       name: `question_${formContent.length}`,
       label: "Untitled question",
       question_type: "short_answer",
-      List: [],
+      List: []
     };
     setFormContent([...formContent, field]);
   };
@@ -24,11 +25,23 @@ function index() {
   };
   return (
     <div className="container mx-auto px-4 h-screen">
-      <div className="flex flex-col w-full space-y-2 my-4">
+      <div className="flex flex-col  space-y-2 my-4">
         <h1 className="text-2xl font-bold">Form Maker</h1>
-        <h2 className="text-lg">Untitled Form</h2>
       </div>
-      <div className="bg-whote shadow-lg rounded-md p-5 my-10">
+      <button className="flex bg-indigo-300 text-white px-4 py-2 border rounded-md hover:bg-neutral-300">
+        Add form
+      </button>
+
+      {/* collapsable form */}
+      <div className="container mx-auto py-5">
+        <Form></Form>
+      </div>
+
+      {/* table */}
+      <div className="container mx-auto">
+        <Table></Table>
+      </div>
+      {/* <div className="bg-whote shadow-lg rounded-md p-5 my-10">
         {formContent.map((field) => {
           return (
             <>
@@ -98,7 +111,7 @@ function index() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
