@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaLinkedin,
@@ -29,6 +30,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-green-500 mb-2">
                 Sign Into Account
               </h2>
+
               <div className="border-2 w-10 bg-green-500 border-green-500 inline-block mb-2"></div>
               <div className="flex justify-center my-2">
                 <a
@@ -80,11 +82,12 @@ export default function Home() {
                     Forgot Password?
                   </a>
                 </div>
+
                 <a
-                  href="#"
+                  href=""
                   className="border-2 border-green-500 text-green-500 rounded-full px-12 py-2 inline-block font-semibold hover:bg-green-500 hover:text-white"
                 >
-                  Sign In
+                  <Link href="/form">Sign In</Link>
                 </a>
               </div>
             </div>
