@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+
+// icon imports
+import { BiUserPlus } from "react-icons/bi";
+
+// component imports
 import Table from "../../components/formTable";
 import Form from "../../components/form";
+
 function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [formContent, setFormContent] = useState([]);
@@ -23,19 +29,33 @@ function index() {
       setFormContent(formFields);
     }
   };
+
+  const [visible, setVisible] = useState(false);
+
+  const handler = () => {
+    setVisible(!visible);
+  };
   return (
     <div className="container mx-auto px-4 h-screen">
       <div className="flex flex-col  space-y-2 my-4">
         <h1 className="text-2xl font-bold">Form Maker</h1>
       </div>
-      <button className="flex bg-indigo-300 text-white px-4 py-2 border rounded-md hover:bg-neutral-300">
-        Add form
-      </button>
+      <div className="container mx-auto flex justify-between py-5 border-b">
+        <div className="left flex gap-3">
+          <button
+            onClick={handler}
+            className="flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-grary-50 hover:border-indigo-500 hover:text-gray-800"
+          >
+            Add Form{" "}
+            <span className="px-1">
+              <BiUserPlus size={23}></BiUserPlus>
+            </span>
+          </button>
+        </div>
+      </div>
 
       {/* collapsable form */}
-      <div className="container mx-auto py-5">
-        <Form></Form>
-      </div>
+      {visible ? <Form></Form> : <></>}
 
       {/* table */}
       <div className="container mx-auto">
